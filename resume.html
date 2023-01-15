@@ -1,0 +1,391 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<style>
+    /* My Resume */
+.profile {
+    margin-bottom: 25px;
+}
+.profile .jobster-user-info {
+    display: inline-block;
+    width: 100%;
+}
+.profile .jobster-user-info .profile-avatar {
+    position: relative;
+    height: 115px;
+    width: 115px;
+    border-radius: 100%;
+    display: inline-block;
+}
+.profile .jobster-user-info .profile-avatar img {
+    border-radius: 100%;
+}
+.profile .jobster-user-info .profile-avatar i {
+    font-size: 16px;
+    color: #21c87a;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 100%;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    bottom: 20px;
+    right: -5px;
+}
+
+.about-candidate {
+    padding: 25px 0px;
+}
+.about-candidate .candidate-info {
+    margin-bottom: 20px;
+}
+
+.resume-experience {
+    padding-left: 10px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+    padding-right: 50px;
+    background: #f6f6f6;
+}
+.resume-experience:before {
+    position: absolute;
+    left: -40%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #f6f6f6;
+    content: "";
+    z-index: -1;
+    top: 0;
+}
+.resume-experience .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-cricle {
+    border-color: #f6f6f6;
+}
+
+.user-dashboard-info-box .select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-weight: bold;
+    color: #626262;
+}
+
+@media (max-width: 1199px) {
+    .secondary-menu ul li a {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .resume-experience {
+        padding-left: 15px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-right: 15px;
+    }
+    .resume-experience:before {
+        content: none;
+    }
+    .secondary-menu ul li {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 575px) {
+    .secondary-menu ul li a {
+        padding: 4px 8px;
+    }
+}
+
+/*****************************
+    Progress Bar
+*****************************/
+.progress {
+    position: relative;
+    overflow: inherit;
+    height: 3px;
+    margin: 40px 0px 15px;
+    width: 100%;
+    display: inline-block;
+}
+.progress .progress-bar {
+    height: 3px;
+    background: #21c87a;
+}
+.progress .progress-bar-title {
+    position: absolute;
+    left: 0;
+    top: -20px;
+    color: #212529;
+    font-size: 14px;
+    font-weight: 600;
+}
+.progress .progress-bar-number {
+    position: absolute;
+    right: 0;
+    color: #646f79;
+    top: -20px;
+}
+
+
+/* Jobster Candidate */
+.jobster-candidate-timeline {
+    position: relative;
+}
+.jobster-candidate-timeline:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    width: 2px;
+    top: 5px;
+    bottom: 5px;
+    height: calc(100% - 5px);
+    background-color: #eeeeee;
+}
+
+.jobster-candidate-timeline .jobster-timeline-item {
+    display: table;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-cricle {
+    border-radius: 50%;
+    border: 12px solid white;
+    z-index: 1;
+    top: 5px;
+    left: 9px;
+    position: absolute;
+}
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-cricle:before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    width: 20px;
+    top: -1px;
+    bottom: 5px;
+    height: 2px;
+    background-color: #eeeeee;
+}
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-cricle > i {
+    font-size: 15px;
+    top: -8px;
+    left: -7px;
+    position: absolute;
+    color: #21c87a;
+}
+
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info {
+    display: table-cell;
+    vertical-align: top;
+    padding: 5px 0 0 70px;
+}
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info h6 {
+    color: #21c87a;
+    margin: 5px 0 0px;
+}
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info span {
+    color: #212529;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.jobster-candidate-timeline span.jobster-timeline-time {
+    color: #646f79 !important;
+}
+
+.jobster-candidate-timeline .jobster-timeline-icon {
+    border: 2px solid #eeeeee;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    line-height: 42px;
+    text-align: center;
+    background: #ffffff;
+    position: relative;
+    margin-bottom: 20px;
+}
+.jobster-candidate-timeline .jobster-timeline-icon i {
+    font-size: 16px;
+    color: #212529;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 16px;
+}
+</style>
+<div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-9">
+          <div class="row align-items-center">
+            <div class="col-lg-5">
+              <div class="resume-base bg-primary user-dashboard-info-box p-4">
+                <div class="profile">
+                  <div class="jobster-user-info">
+                    <div class="profile-avatar">
+                      <img class="img-fluid " src=https://scontent-del1-2.xx.fbcdn.net/v/t1.6435-9/138614928_1205231929874364_2779112230947778102_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GrKICiYTrOAAX_Tn_1J&_nc_ht=scontent-del1-2.xx&oh=00_AfBw7KnRGy6ajtN7XlxbgEYGqY0PC0FL6cIsoATxMsynEA&oe=63EB23D2" alt="">
+                    </div>
+                    <div class="profile-avatar-info mt-3">
+                      <h5 class="text-white">Vickie Meyer</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="about-candidate border-top">
+                  <div class="candidate-info">
+                    <h6 class="text-white">Name:</h6>
+                    <p class="text-white">Aniket Sharma</p>
+                  </div>
+                  <div class="candidate-info">
+                    <h6 class="text-white">Email:</h6>
+                    <p class="text-white">aniketmessi3@gmail.com</p>
+                  </div>
+                  <div class="candidate-info">
+                    <h6 class="text-white">Phone:</h6>
+                    <p class="text-white">750071398</p>
+                  </div>
+                  <div class="candidate-info">
+                    <h6 class="text-white">Date Of Birth:</h6>
+                    <p class="text-white">2001-06-18</p>
+                  </div>
+                  <div class="candidate-info">
+                    <h6 class="text-white">Address:</h6>
+                    <p class="text-white">Friends Colony Muradnagar</p>
+                  </div>
+                  <div class="candidate-info">
+                    <h6 class="text-white">Gender:</h6>
+                    <p class="text-white">Male</p>
+                  </div>
+                </div>
+                <div class="mt-0">
+                  <h5 class="text-white">Professional Skill:</h5>
+                  <div class="progress bg-dark">
+                    <div class="progress-bar bg-white" role="progressbar" style="width:55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar-title text-white">Django</div>
+                        <span class="progress-bar-number text-white">80%</span>
+                    </div>
+                  </div>
+                  <div class="progress bg-dark">
+                    <div class="progress-bar bg-white" role="progressbar" style="width:80%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar-title text-white">JavaScript</div>
+                      <span class="progress-bar-number text-white">80%</span>
+                    </div>
+                  </div>
+                  <div class="progress bg-dark">
+                    <div class="progress-bar bg-white" role="progressbar" style="width:55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar-title text-white">HTML/CSS</div>
+                      <span class="progress-bar-number text-white">70%</span>
+                    </div>
+                  </div>
+                  <div class="progress bg-dark mb-md-0">
+                    <div class="progress-bar bg-white" role="progressbar" style="width:60%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar-title text-white">Java</div>
+                      <span class="progress-bar-number text-white">90%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="resume-experience">
+                <div class="timeline-box">
+                  <h5 class="resume-experience-title">Education:</h5>
+                  <div class="jobster-candidate-timeline">
+                    <div class="jobster-timeline-item">
+                      <div class="jobster-timeline-cricle">
+                        <i class="far fa-circle"></i>
+                      </div>
+                      <div class="jobster-timeline-info">
+                        <div class="dashboard-timeline-info">
+                          <span class="jobster-timeline-time">2018 - 2021</span>
+                          <h6 class="mb-2">Bachelor of Science (Computer Science)</h6>
+                          <span>- University of Delhi</span>
+                          <p class="mt-2">Deshbandhu College.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="jobster-timeline-item mb-0">
+                      <div class="jobster-timeline-cricle">
+                        <i class="far fa-circle"></i>
+                      </div>
+                      <div class="jobster-timeline-info">
+                        <div class="dashboard-timeline-info">
+                          <span class="jobster-timeline-time">2022 - Pres</span>
+                          <h6 class="mb-2">Masters in Computer Application</h6>
+                          <span>- Krishna Institute of Engineering and technology</span>
+                          <p class="mt-2"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-box mt-4">
+                  <h5 class="resume-experience-title">Projects </h5>
+                  <div class="jobster-candidate-timeline">
+                    <div class="jobster-timeline-item">
+                      <div class="jobster-timeline-cricle">
+                        <i class="far fa-circle"></i>
+                      </div>
+                      <div class="jobster-timeline-info">
+                        <div class="dashboard-timeline-info">
+                          <span class="jobster-timeline-time">2022-01-01 to 2020-02-01</span>
+                          <h6 class="mb-2">College Space</h6>
+                          <span>- Web Application</span>
+                          <p class="mt-2">Collegespace is a platform which constitute of 3 things, Notes sharing and creating, online questioning and answering and group chat</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="jobster-timeline-item mb-0">
+                      <div class="jobster-timeline-cricle">
+                        <i class="far fa-circle"></i>
+                      </div>
+                      <div class="jobster-timeline-info">
+                        <div class="dashboard-timeline-info">
+                          <span class="jobster-timeline-time">2021-12 to 2020-12</span>
+                          <h6 class="mb-2">Codify</h6>
+                          <span>Web Application</span>
+                          <p class="mt-2">Codify is a online python Interpreter that can run python code and can detect and show error online.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-box mt-4">
+                  <h5 class="resume-experience-title">Awards:</h5>
+                  <div class="jobster-candidate-timeline">
+                    <div class="jobster-timeline-item">
+                      <div class="jobster-timeline-cricle">
+                        <i class="far fa-circle"></i>
+                      </div>
+                      <div class="jobster-timeline-info">
+                        <div class="dashboard-timeline-info">
+                          <span class="jobster-timeline-time">2023-01</span>
+                          <h6 class="mb-2">Ideathon</h6>
+                          <span>- Kiet college</span>
+                          <p class="mt-2">Secured 3rd rank in Ideathon KIET 2023.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="jobster-timeline-item mb-0">
+                      <div class="jobster-timeline-cricle">
+                        <i class="far fa-circle"></i>
+                      </div>
+                      <div class="jobster-timeline-info">
+                        <div class="dashboard-timeline-info">
+                          <span class="jobster-timeline-time">2020-02</span>
+                          <h6 class="mb-2">Second in Coding competition</h6>
+                          <span>- Miranda House, University of Delhi</span>
+                          <p class="mt-2">Secured second Position in Coding competition of miranda House, University of Delhi.</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
